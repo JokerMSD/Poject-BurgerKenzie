@@ -1,12 +1,16 @@
+import "./index.module.scss"
+
 export const ProductCard = ({ product }) => {
     return(
-        <li>
+        <li className="container">
+            <section className="imgContainer">
             <img src={product.img} alt={product.name} />
-            <div>
+            </section>
+            <div className="productInfo">
                 <h3>{product.name}</h3>
                 <span>{product.category}</span>
                 <span>{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
-                <button>Adicionar</button>
+                <button className="buttonMedium">Adicionar</button>
             </div>
         </li>
     )
