@@ -1,0 +1,11 @@
+@import "./GlobalStyles.scss";
+@import "./Typography.scss";
+@import "./reset.scss";
+@import "./buttons.scss";
+@import "./card.scss";
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
