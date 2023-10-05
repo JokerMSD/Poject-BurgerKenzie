@@ -26,7 +26,7 @@ export const CartModal = ({ cartList }) => {
                <span>Total</span>
                <span>{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
             </div>
-            <button>Remover todos</button>
+            <button className="buttonDefault">Remover todos</button>
          </div>
       </div>
    );

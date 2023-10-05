@@ -7,6 +7,15 @@ export const HomePage = () => {
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState([]);
 
+   const getProducts = async () => {
+      const response = await fetch("https://hamburgueria-kenzie-json-serve.herokuapp.com/products");
+      const data = await response.json();
+      setProductList(data);
+      localStorage.setItem("productList", JSON.stringify(data));
+   };
+
+   getProducts();
+
    // useEffect montagem - carrega os produtos da API e joga em productList
    // useEffect atualização - salva os produtos no localStorage (carregar no estado)
    // adição, exclusão, e exclusão geral do carrinho
