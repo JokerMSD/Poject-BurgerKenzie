@@ -2,16 +2,17 @@ import { useState } from "react";
 import { CartModal } from "../../components/CartModal";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
+import { foodApi } from "../../services/api";
 
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState([]);
 
    const getProducts = async () => {
-      const response = await fetch("https://hamburgueria-kenzie-json-serve.herokuapp.com/products");
-      const data = await response.json();
-      setProductList(data);
+      const response = await foodApi.get("/products")
+      const data = response.data
       localStorage.setItem("productList", JSON.stringify(data));
+      setProductList(data);
    };
 
    getProducts();
