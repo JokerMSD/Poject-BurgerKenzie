@@ -9,10 +9,13 @@ export const HomePage = () => {
    const [cartList, setCartList] = useState([]);
 
    const getProducts = async () => {
+      try{
       const response = await foodApi.get("/products")
       const data = response.data
-      localStorage.setItem("productList", JSON.stringify(data));
       setProductList(data);
+      } catch(error) {
+         console.log(error.message);
+      }
    };
 
    getProducts();
