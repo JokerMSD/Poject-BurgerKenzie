@@ -1,8 +1,8 @@
-import "./index.module.scss"
+import Style from "./style.module.scss";
 
 export const ProductCard = ({ product }) => {
     return(
-        <li className="container">
+        <li className={Style.container}>
             <section className="imgContainer">
             <img src={product.img} alt={product.name} />
             </section>
