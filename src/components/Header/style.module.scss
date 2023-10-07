@@ -1,11 +1,11 @@
-@import "../../styles/GlobalStyles.scss";
+@import "../../styles/global.scss";
 
-header{
+.header{
     display: flex;
     flex-direction: row;
     padding: 1rem;
     margin-bottom: 1.06rem;
-    background-color: #f5f5f5;
+    background-color: var(--grey-0);
 }
 
 header>button{

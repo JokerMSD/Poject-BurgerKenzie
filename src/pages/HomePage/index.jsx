@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { CartModal } from "../../components/CartModal";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { foodApi } from "../../services/api";
-import { useEffect } from "react";
 
 export const HomePage = () => {
    const [productList, setProductList] = useState(() => {
@@ -17,9 +19,11 @@ export const HomePage = () => {
 
    const addToCart = (productToAdd) => {
       setCartList(cartList => [...cartList, productToAdd]);
+      toast.success(`${productToAdd.name} adicionado ao carrinho`);
    };
    
    const removeFromCart = (productToRemove) => {
+      toast.error(`${productToRemove.name} removido do carrinho`);
       setCartList(cartList => cartList.filter(product => product.id !== productToRemove.id));
    };
    
