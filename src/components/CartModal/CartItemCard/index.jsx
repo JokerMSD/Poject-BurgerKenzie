@@ -7,12 +7,16 @@ export const CartItemCard = ({ product, removeFromCart }) => {
       <div className={Style.cardcontainer}>
         <img className={Style.img} src={product.img} alt={product.name} />
         <div className={Style.info}>
-        <h3 className={Style.name}>{product.name}</h3>
-        <p className={Style.price}>{product.price.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        })}</p>
-        <span className={Style.quantity} title="Quantidade">{product.quantity}</span>
+          <h3 className={Style.name}>{product.name}</h3>
+          <p className={Style.price}>
+            {product.price.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </p>
+          <span className={Style.quantity} title="Quantidade">
+            {product.quantity}
+          </span>
         </div>
         <button
           className={Style.removeButton}
