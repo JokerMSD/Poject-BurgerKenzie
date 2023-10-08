@@ -1,11 +1,16 @@
 import { ProductCard } from "./ProductCard";
 
 export const ProductList = ({ productList, setCartList, addToCart }) => {
-   return (
-      <ul>
-         {productList.map((product) => (
-            <ProductCard key={product.id} product={product} setCartList={setCartList} addToCart={addToCart} />
-         ))}
-      </ul>
-   );
+  return (
+    <ul>
+      {productList.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          setCartList={setCartList}
+          addToCart={addToCart}
+        />
+      ))}
+    </ul>
+  );
 };
