@@ -2,9 +2,9 @@
 @import "../../../styles/Typography.scss";
 
 .container {
-  border: 3px solid var(--grey-100);
-  border-radius: 5px;
-  width: 300px;
+  border: 0.1875rem solid var(--grey-100);
+  border-radius: 0.3125rem;
+  min-width: 18.75rem;
   height: 100%;
   button:hover {
     background: var(--brand-1);
@@ -17,17 +17,18 @@
 
 .productInfo {
   display: flex;
-  border: 14px solid var(--white);
+  border: 0.875rem solid var(--white);
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
   background-color: var(--white);
-
+  border-radius: 0.4rem;
 }
 
 .imgcontainer {
   display: flex;
   justify-content: center;
+  border-radius: 0.1rem;
   background-color: var(--grey-0);
   width: 100%;
   height: 50%;
