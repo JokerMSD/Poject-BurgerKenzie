@@ -13,6 +13,11 @@ main {
   margin-left: 7.25rem;
 }
 
+.toast-container{
+  top: 6rem !important;
+  right: 0.3rem !important;
+}
+
 @media (min-width: 320px) and (max-width: 428px) {
   main {
     margin-left: 1.2rem;
