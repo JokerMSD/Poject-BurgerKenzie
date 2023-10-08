@@ -9,9 +9,10 @@ export const CartItemCard = ({ product, removeFromCart }) => {
         <div className={Style.info}>
         <h3 className={Style.name}>{product.name}</h3>
         <p className={Style.price}>{product.price.toLocaleString("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              })}</p>
+          style: "currency",
+          currency: "BRL",
+        })}</p>
+        <span className={Style.quantity} title="Quantidade">{product.quantity}</span>
         </div>
         <button
           className={Style.removeButton}

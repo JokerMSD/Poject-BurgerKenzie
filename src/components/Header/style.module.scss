@@ -1,13 +1,33 @@
 @import "../../styles/global.scss";
 
-.header{
+.header {
     display: flex;
     flex-direction: row;
-    padding: 1rem;
+    justify-content: space-between;
+    padding: 2rem;
     margin-bottom: 1.06rem;
     background-color: var(--grey-0);
 }
 
-header>button{
+.cartOpenButton {
+    display: flex;
+    background-color: var(--grey-0);
+    color: var(--grey-200);
     border: none;
+}
+
+.cartNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.25rem;
+    height: 1.5rem;
+    background-color: var(--brand-1);
+    font-size: 0.875rem;
+    font-weight: 900;
+    line-height: 0rem;
+    color: var(--white);
+    border-radius: 0.4375rem;
+    margin-top: -1rem;
+    margin-left: -0.625rem;
 }

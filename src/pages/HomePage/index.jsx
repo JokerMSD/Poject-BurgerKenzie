@@ -19,9 +19,19 @@ export const HomePage = () => {
    });
 
    const addToCart = (productToAdd) => {
-      setCartList(cartList => [...cartList, productToAdd]);
-      toast.success(`${productToAdd.name} adicionado ao carrinho`);
-   };
+      const existingProductIndex = cartList.findIndex(product => product.id === productToAdd.id);
+
+      if (existingProductIndex !== -1) {
+         const updatedCart = [...cartList];
+         updatedCart[existingProductIndex].quantity += 1;
+         setCartList(updatedCart);
+         toast.success(`Mais 1 ${productToAdd.name} adicionado ao carrinho`);
+      } else {
+         const productWithQuantity = { ...productToAdd, quantity: 1 };
+         setCartList([...cartList, productWithQuantity]);
+         toast.success(`${productToAdd.name} adicionado ao carrinho`);
+      }
+   }
    
    const removeFromCart = (productToRemove) => {
       toast.error(`${productToRemove.name} removido do carrinho`);

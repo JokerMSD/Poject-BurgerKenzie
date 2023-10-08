@@ -9,14 +9,14 @@ export const CartModal = ({
   setVisible,
 }) => {
   const total = cartList.reduce((prevValue, product) => {
-    return prevValue + product.price;
+    return prevValue + product.price * product.quantity;
   }, 0);
 
   return (
     <div role="dialog" className={Style.overlayBox}>
       <div className={Style.modalBox}>
           <div className={Style.header}>
-            <h2>Carrinho de compras</h2>
+            <h2 className={Style.headerTitle}>Carrinho de compras</h2>
             <button
               className={Style.closeButton}
               onClick={() => setVisible(false)}
@@ -53,7 +53,7 @@ export const CartModal = ({
 
             <button
               onClick={() => removeAllFromCart()}
-              className="buttonDefault"
+              className={Style.removeAllButton}
             >
               Remover todos
             </button>

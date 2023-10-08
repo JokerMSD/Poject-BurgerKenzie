@@ -20,7 +20,7 @@
     width: 100%;
     height: 100%;
     max-width: 30.25rem;
-    max-height: 26.9375rem;
+    max-height: 24.9375rem;
 
     display: flex;
     flex-direction: column;
@@ -28,15 +28,38 @@
 }
 
 .modalcontent{
-    max-height: 55%;
+    max-height: 47%;
     overflow-y: scroll;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--grey-300) var(--grey-100);
+}
+
+*::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--white);
+  margin-top: -0.8562rem;
+  margin-bottom: -1.25rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--grey-300);
+  border-radius: 1.25rem;
+  border: 0.1875rem solid var(--white);
 }
 
 .header {
   padding: 0.7rem;
+  padding-right: 0rem;
   border-radius: 0.5rem 0.5rem 0 0;
   line-height: 1.75rem;
   margin-bottom: 0.88rem;
+  width: 97.7%;
 
   background-color: var(--brand-1);
 
@@ -45,10 +68,10 @@
   @extend %heading3;
 
   display: flex;
+  justify-content: space-between;
 }
 
 .closeButton {
-    margin-left: 15rem;
   color: var(--grey-100);
   border: none;
   background-color: var(--brand-1);
@@ -69,11 +92,12 @@
     display: flex;
     flex-direction: column; 
     flex-wrap: nowrap;
+    gap: 0.87rem;
 }
 .footer{
     display: flex;
     position: absolute;
-    bottom: 25%;
+    bottom: 30%;
     flex-direction: column;
     margin-top: 1.5rem;
     margin-left: 1rem;
@@ -90,4 +114,53 @@
     margin-left: 78%;
     font-weight: 600;
 
+}
+.removeAllButton{
+  margin-top: 1rem;
+  width: 100%;
+  display: inline-flex;
+  height: 3.5rem;
+  padding: 0rem 1.25rem;
+  border-radius: 0.5rem;
+  background: #BDBDBD;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover{
+      background: #27AE60;
+      color: #fff;
+  };
+};
+
+@media (min-width:320px) and (max-width:428px) {
+  .header{
+    border-radius: 0.3125rem 0.3125rem 0 0;
+    padding: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .headerTitle{
+    margin-left: 0.8rem;
+  }
+  .closeButton{
+    margin-left: 11rem;
+    border-radius: 0 0.3125rem 0 0;
+  }
+  .overlayBox{
+    .modalBox{
+      width: 96vw;
+    }
+  }
+  .footer{
+    width: 92.5%;
+  }
+  .totalAmountText{
+    margin-left: 74%;
+  }
 }

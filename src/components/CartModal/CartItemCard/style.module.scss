@@ -42,3 +42,21 @@
     color: var(--brand-1);
     margin-left: 1.3rem;
 }
+.quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--brand-1);
+    background-color: var(--white);
+    border-radius: 25px;
+    margin-left: -13px;
+    margin-top: -6px;
+}
+
+@media (min-width:320px) and (max-width:428px) {
+    .removeButton{
+        margin-left: -0.9375rem;
+    }
+}

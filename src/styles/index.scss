@@ -8,3 +8,13 @@ body{
     font-size: 14px;
     font-weight: 600;
 };
+
+main{
+    margin-left: 7.25rem;
+}
+
+@media (min-width:320px) and (max-width:428px){
+    main{
+       margin-left: 2.5rem;
+    }
+}
