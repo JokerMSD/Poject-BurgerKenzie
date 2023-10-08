@@ -8,12 +8,13 @@ import { ProductList } from "../../components/ProductList";
 import { foodApi } from "../../services/api";
 
 export const HomePage = () => {
+   const [isVisible, setVisible] = useState(false);
    const [productList, setProductList] = useState(() => {
-      const storedProducts = JSON.parse(localStorage.getItem("products"));
+      const storedProducts = JSON.parse(localStorage.getItem("@PRODUCTS"));
       return storedProducts || [];
    });
    const [cartList, setCartList] = useState(() => {
-      const storedCart = JSON.parse(localStorage.getItem("cart"));
+      const storedCart = JSON.parse(localStorage.getItem("@CART"));
       return storedCart || [];
    });
 
@@ -46,27 +47,38 @@ export const HomePage = () => {
    },[]);
 
    useEffect(() => {
-      localStorage.setItem("cart", JSON.stringify(cartList))
+      localStorage.setItem("@CART", JSON.stringify(cartList))
    }, [cartList]);
    
    useEffect(() => {
-      localStorage.setItem("products", JSON.stringify(productList))
+      localStorage.setItem("@PRODUCTS", JSON.stringify(productList))
    },[productList]);
    
-
-   // useEffect montagem - carrega os produtos da API e joga em productList               (X)
-   // useEffect atualização - salva os produtos no localStorage (carregar no estado)      (X)
-   // adição, exclusão, e exclusão geral do carrinho                                      (X)
+   
    // renderizações condições e o estado para exibir ou não o carrinho                    ( )
    // filtro de busca                                                                     ( )
    // estilizar tudo com sass de forma responsiva                                         ( )
 
+
+
    return (
       <>
-         <Header />
+         <Header 
+            cartList={cartList}
+            setVisible={setVisible} 
+         />
          <main>
-            <ProductList productList={productList} setCartList={setCartList} addToCart={addToCart} />
-            <CartModal cartList={cartList} removeFromCart={removeFromCart} removeAllFromCart={removeAllFromCart} />
+            <ProductList 
+            productList= {productList} 
+            setCartList= {setCartList} 
+            addToCart= {addToCart} 
+            />
+            {isVisible ? <CartModal 
+            setVisible={setVisible}
+            cartList={cartList} 
+            removeFromCart={removeFromCart} 
+            removeAllFromCart={removeAllFromCart} 
+            /> : null}
          </main>
       </>
    );
