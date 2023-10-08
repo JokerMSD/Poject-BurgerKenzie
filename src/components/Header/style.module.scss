@@ -18,6 +18,15 @@
   background-color: var(--grey-0);
   color: var(--grey-200);
   border: none;
+  cursor: pointer;
+
+  &:hover{
+    color: var(--grey-300);
+  }
+}
+
+.cartOpenButton:hover .cartNumber{
+  background-color: var(--brand-1-05);
 }
 
 .cartNumber {

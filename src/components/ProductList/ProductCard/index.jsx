@@ -15,7 +15,10 @@ export const ProductCard = ({ product, addToCart }) => {
             currency: "BRL",
           })}
         </span>
-        <button onClick={() => addToCart(product)} className="buttonMedium">
+        <button 
+        onClick={() => addToCart(product)} 
+        className={Style.buttonAdd}
+        >
           Adicionar
         </button>
       </div>

@@ -32,13 +32,27 @@ export const HomePage = () => {
          toast.success(`${productToAdd.name} adicionado ao carrinho`);
       }
    }
-   
    const removeFromCart = (productToRemove) => {
-      toast.error(`${productToRemove.name} removido do carrinho`);
-      setCartList(cartList => cartList.filter(product => product.id !== productToRemove.id));
-   };
+      const updatedCart = cartList.filter(product => {
+         if (product.id === productToRemove.id) {
+            if (product.quantity > 1) {
+               product.quantity -= 1;
+               toast.error(`${productToRemove.name} removido do carrinho`);
+               return true;
+            } else {
+               return false;
+            }
+         } else {
+            return true;
+         }
+      });
+
+      setCartList(updatedCart);
+   }
    
    const removeAllFromCart = () => {
+      toast.error("Todos os produtos removidos do carrinho");
+
       setCartList([]);
    };
    
@@ -64,13 +78,6 @@ export const HomePage = () => {
       localStorage.setItem("@PRODUCTS", JSON.stringify(productList))
    },[productList]);
    
-   
-   // renderizações condições e o estado para exibir ou não o carrinho                    ( )
-   // filtro de busca                                                                     ( )
-   // estilizar tudo com sass de forma responsiva                                         ( )
-
-
-
    return (
       <>
          <Header 
