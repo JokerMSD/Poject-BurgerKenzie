@@ -1,0 +1,44 @@
+@import "../../../styles/Typography.scss";
+
+.cardcontainer{
+    display: flex;
+    flex-direction: row;
+};
+.info{
+    display: flex;
+    flex-direction: column;
+};
+.removeButton{
+    color: var(--grey-300);
+    border: none;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    height: 10%;
+    width: 8%;
+    background-color: var(--white);
+
+    &:hover{
+        color: red;
+        cursor: pointer;
+    }
+};
+.img {
+  width: 3.4375rem;
+  height: 3.4375rem;
+  overflow: hidden;
+  border-radius: 0.3125rem;
+  padding: 0.8rem;
+  background: var(--grey-100);
+  margin-left: 0.88rem;
+};
+.name{
+    @extend %heading3;
+    width: 17.13338rem;
+    height: 1.875rem;
+    margin-left: 1.3rem;
+    margin-top: 0.8rem;
+};
+.price{
+    color: var(--brand-1);
+    margin-left: 1.3rem;
+}
