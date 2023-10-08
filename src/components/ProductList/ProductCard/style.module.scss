@@ -1,14 +1,6 @@
 @import "../../../styles/global.scss";
 @import "../../../styles/Typography.scss";
 
-ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-  gap: 3.5rem;
-}
-
 .container {
   border: 3px solid var(--grey-100);
   border-radius: 5px;

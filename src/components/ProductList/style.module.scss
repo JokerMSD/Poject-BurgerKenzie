@@ -1,0 +1,18 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 3.5rem;
+}
+
+@media (min-width: 320px) and (max-width: 428px) {
+  .ul {
+    gap: 1rem;
+    max-width: 21rem;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+}
