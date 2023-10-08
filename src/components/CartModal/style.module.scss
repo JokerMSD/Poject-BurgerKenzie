@@ -16,7 +16,6 @@
     background-color: var(--white);
     border-radius: 0.5rem;
 
-
     width: 100%;
     height: 100%;
     max-width: 30.25rem;
@@ -27,9 +26,9 @@
   }
 }
 
-.modalcontent{
-    max-height: 47%;
-    overflow-y: scroll;
+.modalcontent {
+  max-height: 47%;
+  overflow-y: scroll;
 }
 
 * {
@@ -75,92 +74,90 @@
   color: var(--grey-100);
   border: none;
   background-color: var(--brand-1);
-
 }
 
-.closeIcon{
-    width: 1.5rem;
-    cursor: pointer;
+.closeIcon {
+  width: 1.5rem;
+  cursor: pointer;
 
-    &:hover{
-        color: red;
-    }
+  &:hover {
+    color: red;
+  }
 }
 
-.ul{
-    max-height: 24rem;
-    display: flex;
-    flex-direction: column; 
-    flex-wrap: nowrap;
-    gap: 0.87rem;
+.ul {
+  max-height: 24rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.87rem;
 }
-.footer{
-    display: flex;
-    position: absolute;
-    bottom: 30%;
-    flex-direction: column;
-    margin-top: 1.5rem;
-    margin-left: 1rem;
-    border-top: 4px solid var(--grey-100);
-    width: 28.25rem;
-    height: 0.125rem;
+.footer {
+  display: flex;
+  position: absolute;
+  bottom: 30%;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  border-top: 4px solid var(--grey-100);
+  width: 28.25rem;
+  height: 0.125rem;
 }
-.total{
-    margin-top: 0.94rem;
-    margin-bottom: 1.3rem;
+.total {
+  margin-top: 0.94rem;
+  margin-bottom: 1.3rem;
 }
-.totalAmountText{
-    color: var(--grey-300);
-    margin-left: 78%;
-    font-weight: 600;
-
+.totalAmountText {
+  color: var(--grey-300);
+  margin-left: 78%;
+  font-weight: 600;
 }
-.removeAllButton{
+.removeAllButton {
   margin-top: 1rem;
   width: 100%;
   display: inline-flex;
   height: 3.5rem;
   padding: 0rem 1.25rem;
   border-radius: 0.5rem;
-  background: #BDBDBD;
+  background: var(--grey-200);
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
   flex-shrink: 0;
   border: none;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
   font-size: 1rem;
 
-  &:hover{
-      background: #27AE60;
-      color: #fff;
-  };
-};
+  &:hover {
+    background: #27ae60;
+    color: var(--white);
+  }
+}
 
-@media (min-width:320px) and (max-width:428px) {
-  .header{
+@media (min-width: 320px) and (max-width: 428px) {
+  .header {
     border-radius: 0.3125rem 0.3125rem 0 0;
     padding: 0;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
-  .headerTitle{
+  .headerTitle {
     margin-left: 0.8rem;
   }
-  .closeButton{
+  .closeButton {
     margin-left: 11rem;
     border-radius: 0 0.3125rem 0 0;
   }
-  .overlayBox{
-    .modalBox{
+  .overlayBox {
+    .modalBox {
       width: 96vw;
     }
   }
-  .footer{
+  .footer {
     width: 92.5%;
   }
-  .totalAmountText{
+  .totalAmountText {
     margin-left: 74%;
   }
 }
