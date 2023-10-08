@@ -4,8 +4,8 @@
   height: 21.625rem;
   overflow: hidden;
   border-radius: 0.3125rem;
-  border: 2px solid var(--grey-100, #e0e0e0);
-  background: #fff;
+  border: 2px solid var(--grey-100);
+  background: var(--white);
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -13,7 +13,7 @@
 
   &:focus {
     border-radius: 0.3125rem;
-    border: 2px solid #27ae60;
-    background: #fff;
-  };
-};
+    border: 2px solid var(--brand-1);
+    background: var(--white);
+  }
+}
